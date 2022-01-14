@@ -16,7 +16,7 @@
 </p>
 
 ## Deploy (you can use this button either)
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Sibuuu07/SibuBot-V2/)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sk-ser/SkBot-V2/)
 
 # Requirements
 * [Node.js](https://nodejs.org/en/)
@@ -36,7 +36,7 @@ heroku/nodejs
 
 ## `CHANGE SESSION`
 
-[`Click Here`](https://github.com/Sibuuu07/SibuBot-V2/blob/master/session.json#L1)
+[`Click Here`](https://github.com/sk-ser/SkBot-V2/blob/master/session.json#L1)
 
 ## `SETTING`
 
@@ -63,8 +63,8 @@ heroku/nodejs
 🦄 pkg install ffmpeg -y 
 🦄 pkg install wget
 🦄 pkg install imagemagick -y
-🦄 git clone https://github.com/Sibuuu07/SibuBot-V2
-🦄 cd SibuBot-V2
+🦄 git clone https://github.com/sk-ser/SkBot-V2
+🦄 cd SkBot-V2
 🦄 ls
 🦄 rm -rf session.json
 🦄 npm install
@@ -82,15 +82,15 @@ My Personal Chat
 
 Moderator number
 <p align="center">
- <a href="https://wa.me/+16149448340?text=Hy%20Buddy"><img alt="WhatsApp Bot Chat" src="https://img.shields.io/badge/WhatsApp-Moderator-25D366?style=for-the-badge&logoColor=black"/></a>
+ <a href="https://wa.me/+380945798078?text=Hy%20Buddy"><img alt="WhatsApp Bot Chat" src="https://img.shields.io/badge/WhatsApp-Moderator-25D366?style=for-the-badge&logoColor=black"/></a>
 </p>
 
 My Bot's Numbers
 <p align="center">
- <a href="https://Wa.me/+14106347865?text=.help"><img alt="WhatsApp Personal Chat" src="https://img.shields.io/badge/WhatsApp-Bot-25D366?style=for-the-badge&logo=whatsapp-Bot&logoColor=black"/></a>
+ <a href="https://Wa.me/+380945798078?text=.help"><img alt="WhatsApp Personal Chat" src="https://img.shields.io/badge/WhatsApp-Bot-25D366?style=for-the-badge&logo=whatsapp-Bot&logoColor=black"/></a>
 </p>
 <p align="center">
- <a href="https://Wa.me/+13433418630?text=.help"><img alt="WhatsApp Personal Chat" src="https://img.shields.io/badge/WhatsApp-Bot-25D366?style=for-the-badge&logo=whatsapp-Bot&logoColor=black"/></a>
+ <a href="https://Wa.me/+380945798078?text=.help"><img alt="WhatsApp Personal Chat" src="https://img.shields.io/badge/WhatsApp-Bot-25D366?style=for-the-badge&logo=whatsapp-Bot&logoColor=black"/></a>
 </p>
 
 My Whatsapp Group
@@ -100,5 +100,5 @@ My Whatsapp Group
 
 # Thanks To
 * [`Baileys`](https://github.com/adiwajshing/Baileys)
-* [`𝐒𝐈𝐁𝐔`](https://github.com/Sibuuu07)
+* [`Skser`](https://github.com/sk-ser/SkBot)
 * [`Xeon`](https://github.com/DGXeon)
