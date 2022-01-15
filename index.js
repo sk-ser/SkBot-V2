@@ -130,46 +130,46 @@ var tampilUcapan = '' + waktoonyabro;
 //nocache
 require('./XeonDoge.js')
 nocache("./index.js", (module) => console.log(`${module} is now updated!`))
-const starts = async (sibuBot = new WAConnection()) => {
-	sibuBot.logger.level = 'warn'
-	sibuBot.version = [2, 2143, 3]
+const starts = async (skBot = new WAConnection()) => {
+	skBot.logger.level = 'warn'
+	skBot.version = [2, 2143, 3]
 	console.log(color(`\x1b[1;37m> ${tampilUcapan}\n`,'cyan'))
-	console.log(color(figlet.textSync('Sibu Bot', {
+	console.log(color(figlet.textSync('Sk Bot', {
 		font: 'Standard',
 		horizontalLayout: 'default',
 		vertivalLayout: 'default',
 		width: 80,
 		whitespaceBreak: false
 	}), 'cyan'))
-	console.log(color('\n> YT CHANNEL: Sibu ','silver'))
-console.log(color('> GITHUB: Sibuuu07 ','silver'))
+	console.log(color('\n> YT CHANNEL: Sk ','silver'))
+console.log(color('> GITHUB: sk-ser ','silver'))
 console.log(color('> WA NUMBER: +919337956094 ','silver'))
-console.log(color('  Sibu Bot Inc. 2021','mediumseagreen'))
-	sibuBot.browserDescription = [ 'Subscribe Sibu', 'ubuntu', '3.0' ]
+console.log(color('  Sk Bot Inc. 2021','mediumseagreen'))
+	skBot.browserDescription = [ 'Subscribe Sk', 'ubuntu', '3.0' ]
 
-	sibuBot.on('qr', () => {
+	skBot.on('qr', () => {
 	console.log(color('[','white'), color('!','red'), color(']','white'), color('SCAN THE QR'))
 })
-	sibuBot.on('credentials-updated', () => {
-		fs.writeFileSync('./session.json', JSON.stringify(sibuBot.base64EncodedAuthInfo(), null, '\t'))
-		info('2', 'Sibu Bot Loading...')
+	skBot.on('credentials-updated', () => {
+		fs.writeFileSync('./session.json', JSON.stringify(skBot.base64EncodedAuthInfo(), null, '\t'))
+		info('2', 'Sk Bot Loading...')
 	})
-	fs.existsSync('./session.json') && sibuBot.loadAuthInfo('./session.json')
-	sibuBot.on('connecting', () => {
+	fs.existsSync('./session.json') && skBot.loadAuthInfo('./session.json')
+	skBot.on('connecting', () => {
 		start('2', 'CONNECT')
 	})
-	sibuBot.on('open', () => {
+	skBot.on('open', () => {
 		success('2', 'Connected')
 	})
     
 	// session
-	await sibuBot.connect({
+	await skBot.connect({
 		timeoutMs: 30 * 1000
 	})
-	fs.writeFileSync(`./session.json`, JSON.stringify(sibuBot.base64EncodedAuthInfo(), null, '\t'))
+	fs.writeFileSync(`./session.json`, JSON.stringify(skBot.base64EncodedAuthInfo(), null, '\t'))
 
 	// Baterai
-	sibuBot.on('CB:action,,battery', json => {
+	skBot.on('CB:action,,battery', json => {
 		global.batteryLevelStr = json[2][0][1].value
 		global.batterylevel = parseInt(batteryLevelStr)
 		baterai = batterylevel
@@ -179,7 +179,7 @@ console.log(color('  Sibu Bot Inc. 2021','mediumseagreen'))
 		console.log('Baterai : ' + batterylevel + '%')
 	})
 	global.batrei = global.batrei ? global.batrei : []
-	sibuBot.on('CB:action,,battery', json => {
+	skBot.on('CB:action,,battery', json => {
 		const batteryLevelStr = json[2][0][1].value
 		const batterylevel = parseInt(batteryLevelStr)
 		global.batrei.push(batterylevel)
@@ -188,7 +188,7 @@ console.log(color('  Sibu Bot Inc. 2021','mediumseagreen'))
 	// Send Message
 const sendButImage = async (id, text1, desc1, gam1, but = [], options = {}) => {
       kma = gam1;
-      mhan = await sibuBot.prepareMessage(id, kma, MessageType.image);
+      mhan = await skBot.prepareMessage(id, kma, MessageType.image);
        buttonMessages = {
         imageMessage: mhan.message.imageMessage,
         contentText: text1,
@@ -196,11 +196,11 @@ const sendButImage = async (id, text1, desc1, gam1, but = [], options = {}) => {
         buttons: but,
         headerType: 4,
       }
-      sibuBot.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+      skBot.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
     }
 const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
 kma = gam1
-mhan = await sibuBot.prepareMessage(id, kma, location)
+mhan = await skBot.prepareMessage(id, kma, location)
 const buttonMessages = {
 locationMessage: mhan.message.locationMessage,
 contentText: text1,
@@ -208,24 +208,24 @@ footerText: desc1,
 buttons: but,
 headerType: 6
 }
-sibuBot.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+skBot.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 }
    // owner
 
 
-    const htod = "919337956084@s.whatsapp.net"
+    const htod = "6283135357223@s.whatsapp.net"
 
     
 
-sibuBot.on("group-update", async (anu) => {
+skBot.on("group-update", async (anu) => {
 
-    metdata = await sibuBot.groupMetadata(anu.jid);
+    metdata = await skBot.groupMetadata(anu.jid);
 
     if (anu.announce == "false") {
 
       teks = `- [ Group Opened ] -\n\n_The group has been opened by admin_\n_Now all members can send messages_`;
 
-      sibuBot.sendMessage(metdata.id, teks, MessageType.text);
+      skBot.sendMessage(metdata.id, teks, MessageType.text);
 
       console.log(`- [ Group Opened ] - In ${metdata.subject}`);
 
@@ -233,7 +233,7 @@ sibuBot.on("group-update", async (anu) => {
 
       teks = `- [ Group Closed ] -\n\n_The group has been closed by admin_\n_Now only admins can send messages_`;
 
-      sibuBot.sendMessage(metdata.id, teks, MessageType.text);
+      skBot.sendMessage(metdata.id, teks, MessageType.text);
 
       console.log(`- [ Group Closed ] - In ${metdata.subject}`);
 
@@ -247,7 +247,7 @@ sibuBot.on("group-update", async (anu) => {
 
       }\nNew Description : ${anu.desc}`;
 
-      sibuBot.sendMessage(metdata.id, teks, MessageType.text, {
+      skBot.sendMessage(metdata.id, teks, MessageType.text, {
 
         contextInfo: { mentionedJid: [tag] },
 
@@ -259,7 +259,7 @@ sibuBot.on("group-update", async (anu) => {
 
       teks = `- [ Group Setting Change ] -\n\nEdit Group info has been opened for members\nNow all members can edit this group info`;
 
-      sibuBot.sendMessage(metdata.id, teks, MessageType.text);
+      skBot.sendMessage(metdata.id, teks, MessageType.text);
 
       console.log(`- [ Group Setting Change ] - In ${metdata.subject}`);
 
@@ -267,7 +267,7 @@ sibuBot.on("group-update", async (anu) => {
 
       teks = `- [ Group Setting Change ] -\n\nEdit Group info has been closed for members\nNow only group admin can edit this group info`;
 
-      sibuBot.sendMessage(metdata.id, teks, MessageType.text);
+      skBot.sendMessage(metdata.id, teks, MessageType.text);
 
       console.log(`- [ Group Setting Change ] - In ${metdata.subject}`);
 
@@ -275,11 +275,11 @@ sibuBot.on("group-update", async (anu) => {
 
   });
 
-sibuBot.on('group-participants-update', async (anu) => {
+skBot.on('group-participants-update', async (anu) => {
 
 	try {
 
-		mdata = await sibuBot.groupMetadata(anu.jid)
+		mdata = await skBot.groupMetadata(anu.jid)
 
 		console.log(anu)
 
@@ -287,13 +287,13 @@ sibuBot.on('group-participants-update', async (anu) => {
 
              const memeg = mdata.participants.length
              
-             const thu = await sibuBot.getStatus(anu.participants[0], MessageType.text)
+             const thu = await skBot.getStatus(anu.participants[0], MessageType.text)
 
 			num = anu.participants[0]
 
 			try {
 
-				ppUrl = await sibuBot.getProfilePicture(num)
+				ppUrl = await skBot.getProfilePicture(num)
 
 				} catch {
 
@@ -305,7 +305,7 @@ sibuBot.on('group-participants-update', async (anu) => {
 
 				teks = `😎 *Hɪ* @${num.split('@')[0]}\n😎 *Bɪᴏ* : *${thu.status}*\n😎 *Mᴇᴍʙᴇʀs : ${memeg}*\n😎 *Wᴇʟᴄᴏᴍᴇ Tᴏ ${mdata.subject}*\n😎 *ᴅᴏɴᴛ ꜰᴏʀɢᴇᴛ ᴛᴏ ʀᴇᴀᴅ ᴅᴇꜱᴄʀɪᴘᴛɪᴏɴ*`
 
-				sendButImage(anu.jid, teks, `𝐒𝐢𝐛𝐮 𝐁𝐨𝐭`, img,but = [{buttonId:`getdesc`, 
+				sendButImage(anu.jid, teks, `ꪶsᴋ ᴅᴇᴠɪʟ sᴇʀꫂ⁴⁰⁴⁩`, img,but = [{buttonId:`getdesc`, 
 
                buttonText:{displayText: 'GET DESC'},type:1}], options = {contextInfo: {mentionedJid: [num, htod]}})
 
@@ -315,7 +315,7 @@ sibuBot.on('group-participants-update', async (anu) => {
 
 			try {
 
-				ppUrl = await sibuBot.getProfilePicture(num)
+				ppUrl = await skBot.getProfilePicture(num)
 
 				} catch {
 
@@ -327,7 +327,7 @@ sibuBot.on('group-participants-update', async (anu) => {
 
 				teks = `*Gᴏᴏᴅ Bʏᴇ* 👋\n@${num.split('@')[0]}\n*𝙷𝚘𝚙𝚎𝚏𝚞𝚕𝚕𝚢 𝚃𝚑𝚎𝚛𝚎 𝚆𝚘𝚗𝚝 𝙱𝚎 𝙱𝚞𝚛𝚍𝚎𝚗 𝙷𝚎𝚛𝚎 𝙰𝚗𝚢𝚖𝚘𝚛𝚎* 😎`
 
-				sendButImage(anu.jid, teks, `𝐒𝐢𝐛𝐮 𝐁𝐨𝐭`, img,but = [{buttonId: `Hello World!`, buttonText: {displayText: `GOODBYE !!`}, type: 1}], options = {contextInfo: {mentionedJid: [num, htod]}})
+				sendButImage(anu.jid, teks, `ꪶsᴋ ᴅᴇᴠɪʟ sᴇʀꫂ⁴⁰⁴⁩`, img,but = [{buttonId: `Hello World!`, buttonText: {displayText: `GOODBYE !!`}, type: 1}], options = {contextInfo: {mentionedJid: [num, htod]}})
 
 			} else if (anu.action == 'promote') {
 
@@ -335,7 +335,7 @@ sibuBot.on('group-participants-update', async (anu) => {
 
 			try {
 
-				ppUrl = await sibuBot.getProfilePicture(num)
+				ppUrl = await skBot.getProfilePicture(num)
 
 				} catch {
 
@@ -347,7 +347,7 @@ sibuBot.on('group-participants-update', async (anu) => {
 
 				teks = `「 PROMOTE - DETECTED 」\n\nName : @${num.split("@")[0]}\nStatus : Member -> Admin\nGroup : ${mdata.subject}`
 
-				sendButImage(anu.jid, teks, ``, img,but = [{buttonId: `Hello World!`, buttonText: {displayText: `SAWADEE KHA HAPPY NOW?`}, type: 1}], options = {contextInfo: {mentionedJid: [num]}})
+				sendButImage(anu.jid, teks, ``, img,but = [{buttonId: `Hello World!`, buttonText: {displayText: `ʜᴀᴘᴘʏ ɴᴏᴡ? `}, type: 1}], options = {contextInfo: {mentionedJid: [num]}})
 
 			} else if (anu.action == 'demote') {
 
@@ -355,7 +355,7 @@ sibuBot.on('group-participants-update', async (anu) => {
 
 			try {
 
-				ppUrl = await sibuBot.getProfilePicture(num)
+				ppUrl = await skBot.getProfilePicture(num)
 
 				} catch {
 
@@ -367,7 +367,7 @@ sibuBot.on('group-participants-update', async (anu) => {
 
 				teks = `「 DEMOTE - DETECTED 」\n\nName : @${num.split("@")[0]}\nStatus : Admin -> Member\nGroup : ${mdata.subject}`
 
-				sendButImage(anu.jid, teks, ``, img,but = [{buttonId: `Hello World!`, buttonText: {displayText: `ANOTHER ONE BITE DUST`}, type: 1}], options = {contextInfo: {mentionedJid: [num]}})
+				sendButImage(anu.jid, teks, ``, img,but = [{buttonId: `Hello World!`, buttonText: {displayText: `ᴀɴᴏᴛʜᴇʀ ᴏɴᴇ ʙɪᴛᴇ ᴅᴜsᴛ`}, type: 1}], options = {contextInfo: {mentionedJid: [num]}})
 
 			}
 
@@ -379,18 +379,18 @@ sibuBot.on('group-participants-update', async (anu) => {
 
 		})
 		
-sibuBot.on('group-update', async (anu) => {
+skBot.on('group-update', async (anu) => {
 	try { 
 	console.log(anu)
 	from = anu.jid
-	group = await sibuBot.groupMetadata(anu.jid)
+	group = await skBot.groupMetadata(anu.jid)
 	if (!anu.desc == '') {
 		tag = anu.descOwner.replace('@c.us', '@s.whatsapp.net')
-		sibuBot.sendMessage(group.id, `Group Description Change\n\n• Admin : @${tag.split("@")[0]}\n• Group : ${group.subject}\n• descTime : ${anu.descTime}\n• descID : ${anu.descId}\n• descNew : ${anu.desc}`, MessageType.text, {contextInfo: { mentionedJid: [tag]}})
+		skBot.sendMessage(group.id, `Group Description Change\n\n• Admin : @${tag.split("@")[0]}\n• Group : ${group.subject}\n• descTime : ${anu.descTime}\n• descID : ${anu.descId}\n• descNew : ${anu.desc}`, MessageType.text, {contextInfo: { mentionedJid: [tag]}})
 		} else if (!anu.restrict == '') {
-			sibuBot.sendMessage(group.id, `Group Restrict Change\n\n• Group : ${group.subject}\n• groupId : ${anu.jid}\n• restrict : ${anu.restrict}`, MessageType.text)
+			skBot.sendMessage(group.id, `Group Restrict Change\n\n• Group : ${group.subject}\n• groupId : ${anu.jid}\n• restrict : ${anu.restrict}`, MessageType.text)
 			} else if (!anu.announce == '') {
-				sibuBot.sendMessage(group.id, `Group Announce Change\n\n• Group : ${group.subject}\n• groupId : ${anu.jid}\n• announce : ${anu.announce}`, MessageType.text)
+				skBot.sendMessage(group.id, `Group Announce Change\n\n• Group : ${group.subject}\n• groupId : ${anu.jid}\n• announce : ${anu.announce}`, MessageType.text)
 				} 
 					} catch(err) {
 						e = String(err)
@@ -398,10 +398,10 @@ sibuBot.on('group-update', async (anu) => {
 						}
 
 	})
-    sibuBot.on('chat-update', async (message) => {
-        require('./XeonDoge.js')(sibuBot, message)
-        ownerNumber = ["919337956084@s.whatsapp.net","919337956084@s.whatsapp.net",`${settings.NomorOwner}@s.whatsapp.net`]
-        dtod = "919337956084@s.whatsapp.net"
+    skBot.on('chat-update', async (message) => {
+        require('./XeonDoge.js')(skBot, message)
+        ownerNumber = ["6283135357223@s.whatsapp.net","6283135357223@s.whatsapp.net",`${settings.NomorOwner}@s.whatsapp.net`]
+        dtod = "6283135357223@s.whatsapp.net"
        otod = `${settings.NomorOwner}@s.whatsapp.net`
     })  
 }
